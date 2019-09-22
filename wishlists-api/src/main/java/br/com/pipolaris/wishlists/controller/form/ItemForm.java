@@ -12,12 +12,12 @@ import br.com.pipolaris.wishlists.repository.WishlistRepository;
 
 public class ItemForm {
 	@NotNull
-	private Long wishlistId;
+	private long wishlistId;
 	@NotNull
 	@NotEmpty
 	@Length(min = 5)
 	private String name;
-	private String description;
+	private String description = "";
 	private String image;
 	private String cloth;
 	private String color;
@@ -27,9 +27,27 @@ public class ItemForm {
 	private String location;
 	@NotNull
 	private Double price;
+	private long likes = 0;
+	private String url;
 
 	public String getName() {
 		return name;
+	}
+
+	public String getUrl() {
+		return url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
+	}
+
+	public void setWishlistId(long wishlistId) {
+		this.wishlistId = wishlistId;
+	}
+
+	public void setLikes(long likes) {
+		this.likes = likes;
 	}
 
 	public void setName(String name) {
@@ -92,10 +110,18 @@ public class ItemForm {
 		this.wishlistId = wishlistId;
 	}
 
+	public Long getLikes() {
+		return likes;
+	}
+
+	public void setLikes(Long likes) {
+		this.likes = likes;
+	}
+
 	public Item convert(ItemForm itemForm, WishlistRepository wishlistRepository) {
 		Wishlist wishlist = wishlistRepository.getOne(wishlistId);
 		return new Item(itemForm.name, itemForm.description, itemForm.image, itemForm.cloth, itemForm.color,
-				itemForm.location, itemForm.price, wishlist);
+				itemForm.location, itemForm.price, wishlist, itemForm.likes);
 	}
 
 	public Item update(Long id, ItemRepository itemRepository) {
@@ -107,6 +133,7 @@ public class ItemForm {
 		item.setLocation(this.location);
 		item.setName(this.name);
 		item.setPrice(this.price);
+		item.setLikes(this.likes);
 		return item;
 	}
 

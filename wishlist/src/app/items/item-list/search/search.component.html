@@ -1,0 +1,13 @@
+<div class="search">
+  <form class="search__content">
+      <i aria-hidden="true" class="fa fa-search search__icon"></i>
+      <input 
+          class="search__input" 
+          type="search" 
+          placeholder="search..." 
+          autofocus
+          (keyup)="debounce.next($event.target.value)"
+          [value] ="value"
+          >
+  </form>
+</div>

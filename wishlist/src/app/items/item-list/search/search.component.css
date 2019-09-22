@@ -1,0 +1,25 @@
+.search {
+  padding: 20px;
+}
+
+.search .search__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.search .search__content .search__icon {
+  margin-right: 10px;
+  margin-top: 4px;
+}
+
+.search .search__content .search__input {
+  border: 1px solid #5F4B8B;
+  border-radius: 5px;
+  outline: none;
+  font-size: inherit;
+}
+/*# sourceMappingURL=search.component.css.map */

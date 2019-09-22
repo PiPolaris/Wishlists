@@ -1,13 +1,16 @@
 package br.com.pipolaris.wishlists.controller;
 
 import java.net.URI;
-import java.util.List;
 import java.util.Optional;
 
 import javax.transaction.Transactional;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort.Direction;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -37,12 +40,12 @@ public class ItemController {
 	private WishlistRepository wishlistRepository;
 
 	@GetMapping
-	public List<ItemDto> list(String itemName) {
-		if (itemName == null) {
-			List<Item> items = itemRepository.findAll();
+	public Page<ItemDto> list(Long wishId, @PageableDefault(sort = "name", direction = Direction.DESC, page = 0, size = 3) Pageable paginacao) {
+		if (wishId == null) {
+			Page<Item> items = itemRepository.findAll(paginacao);
 			return ItemDto.convert(items);
 		} else {
-			List<Item> items = itemRepository.findByName(itemName);
+			Page<Item> items = itemRepository.findByWishlistId(wishId, paginacao);
 			return ItemDto.convert(items);
 		}
 	}

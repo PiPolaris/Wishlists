@@ -1,0 +1,7 @@
+.card {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(400px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+}
+/*# sourceMappingURL=items.component.css.map */

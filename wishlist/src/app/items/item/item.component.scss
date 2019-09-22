@@ -1,0 +1,44 @@
+@import "../../shared/styles/variables.scss";
+
+.item {
+  display: flex;
+  margin: 10px 20px;
+  border: 1px solid #5F4B8B;
+  border-radius: 5px;
+
+  &__thumbnail {
+    width: 200px;
+    height: 200px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    background-color: rgba($color-gray, .2);
+    width: 100%;
+
+    .item__title {
+      flex: 1;
+      font-weight: bold;
+    }
+
+    .item__description {
+      flex: 2;
+    }
+
+    .item__content--bottom {
+        display: flex;
+
+        .item__price {
+            flex: 1;
+            font-weight: bold;
+            font-size: large;
+          }
+
+          .item__icon {
+              margin-left: 10px;
+          }
+    }
+  }
+}

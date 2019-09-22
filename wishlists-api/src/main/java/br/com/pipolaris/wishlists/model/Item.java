@@ -1,10 +1,14 @@
 package br.com.pipolaris.wishlists.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Item {
@@ -13,19 +17,25 @@ public class Item {
 	private Long id;
 	private String name;
 	private String description;
+	@Column(length = 1000)
 	private String image;
 	private String cloth;
 	private String color;
 	private String location;
 	private Double price;
-	@OneToOne
+	@JsonIgnore
+	@ManyToOne
+	@JoinColumn(name = "wishlist_id", nullable = false)
 	private Wishlist wishlist;
+	private Long likes;
+	@Column(length = 1000)
+	private String url;
 
 	public Item() {
 	}
 
 	public Item(String name, String description, String image, String cloth, String color, String location,
-			Double price, Wishlist wishlist) {
+			Double price, Wishlist wishlist, Long likes) {
 		this.name = name;
 		this.description = description;
 		this.image = image;
@@ -34,6 +44,7 @@ public class Item {
 		this.location = location;
 		this.price = price;
 		this.wishlist = wishlist;
+		this.likes = likes;
 	}
 
 	public Long getId() {
@@ -72,6 +83,14 @@ public class Item {
 		return cloth;
 	}
 
+	public String getUrl() {
+		return url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
+	}
+
 	public void setCloth(String cloth) {
 		this.cloth = cloth;
 	}
@@ -106,5 +125,13 @@ public class Item {
 
 	public void setWishlist(Wishlist wishlist) {
 		this.wishlist = wishlist;
+	}
+
+	public Long getLikes() {
+		return likes;
+	}
+
+	public void setLikes(Long likes) {
+		this.likes = likes;
 	}
 }

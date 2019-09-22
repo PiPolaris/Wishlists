@@ -1,0 +1,6 @@
+<app-search (onTyping)="filter = $event" [value]="filter"></app-search>
+
+<app-items [items]="items.content | filterByDescription: filter"></app-items>
+
+<app-load-button (click)="load()" [hasMore]="hasMore">
+</app-load-button>

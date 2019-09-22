@@ -1,0 +1,15 @@
+<div class="item">
+  <img class="item__thumbnail" [src]="image" [alt]="description">
+  <div class="item__content">
+    <p class="item__title">{{ name }}</p>
+    <p class="item__description">{{ description }}</p>
+    <div class="item__content--bottom">
+      <p class="item__price">R${{ price }}</p>
+      <div class="item__icons">
+        <a [href]="url"><i aria-hidden="true" class="fa fa-link item__icon"></i></a>
+        <a href=""><i aria-hidden="true" class="fa fa-edit item__icon"></i></a>
+        <a href=""><i aria-hidden="true" class="fa fa-trash item__icon"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
