@@ -27,7 +27,7 @@ export class ItemListComponent implements OnInit {
 
   load() {
     this.itemService
-      .listFromUserPaginated(this.userId, ++this.currentPage)
+      .listItemsFromUserPaginated(this.userId, ++this.currentPage)
       .subscribe(items => {
         this.filter = '';
         this.items.content = this.items.content.concat(items.content);

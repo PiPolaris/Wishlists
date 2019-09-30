@@ -7,12 +7,6 @@ section {
   -ms-grid-rows: auto 1fr;
       grid-template-rows: auto 1fr;
       grid-template-areas: "side  top     top" "side  content right";
-  overflow: hidden;
-}
-
-section app-side-menu,
-section app-top-menu {
-  top: 0;
 }
 
 section app-side-menu {
@@ -39,24 +33,5 @@ section .content {
   -ms-grid-row: 2;
   -ms-grid-column: 2;
   grid-area: content;
-  overflow-y: auto;
 }
-
-::-webkit-scrollbar {
-  color: black;
-  background: pink;
-}
-
-::-webkit-scrollbar-track {
-  background-color: #F4F4F4;
-}
-
-::-webkit-scrollbar {
-  width: 8px;
-  background: #F4F4F4;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #dad7d7;
-}
-/*# sourceMappingURL=item-list.component.css.map */
+/*# sourceMappingURL=main.component.css.map */

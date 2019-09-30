@@ -1,0 +1,23 @@
+@import "../../shared/styles/variables.scss";
+
+section {
+    background-color: rgba($color: $color-gray, $alpha: 0.2);
+    display: flex;
+    flex-flow: row;
+    justify-content: flex-end;
+    padding: 40px 30px;
+
+    span {
+        color: $color-red-violet;
+        font-weight: bold;
+        float: right;
+        right: 0;
+    }
+
+    .thumbnail {
+        border-radius: 50%;
+        max-width: 120px;
+        position: absolute;
+        left: 45%;
+    }
+}

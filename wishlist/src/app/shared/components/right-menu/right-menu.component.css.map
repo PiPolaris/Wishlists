@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "ACAA,UAAU;ADEV,AAAA,OAAO,CAAC;EACJ,gBAAgB,ECCF,OAAO;EDArB,MAAM,EAAE,IAAI;CACf",
+    "sources": [
+        "right-menu.component.scss",
+        "../../shared/styles/variables.scss"
+    ],
+    "names": [],
+    "file": "right-menu.component.css"
+}

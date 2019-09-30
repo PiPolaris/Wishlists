@@ -1,0 +1,51 @@
+@import "../../shared/styles/variables.scss";
+
+section {
+  background-color: $color-ultra-violet;
+  height: 100%;
+  color: white;
+  text-transform: uppercase;
+  align-content: center;
+  display: flex;
+  flex-direction: column;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .logo {
+    justify-self: center;
+    width: fit-content;
+    margin: 10px auto;
+  }
+
+  .icon {
+      margin-right: 10px;
+      vertical-align: middle;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;    
+  }
+
+  li,
+  p {
+    padding: 15px 30px;
+    vertical-align: middle;
+
+    &:hover {
+      background-color: $color-rapsody;
+    }
+  }
+
+  hr {
+    border: 1px solid white;
+    margin: 15px 25px;
+  }
+
+  span {
+    vertical-align: middle;
+  }
+}

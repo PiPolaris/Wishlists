@@ -1,0 +1,30 @@
+/*Colors*/
+section {
+  background-color: rgba(204, 204, 204, 0.2);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row;
+          flex-flow: row;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding: 40px 30px;
+}
+
+section span {
+  color: #A35776;
+  font-weight: bold;
+  float: right;
+  right: 0;
+}
+
+section .thumbnail {
+  border-radius: 50%;
+  max-width: 120px;
+  position: absolute;
+  left: 45%;
+}
+/*# sourceMappingURL=top-menu.component.css.map */

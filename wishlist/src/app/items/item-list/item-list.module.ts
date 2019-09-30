@@ -6,6 +6,7 @@ import { ItemListComponent } from './item-list.component';
 import { ItemsComponent } from './items/items.component';
 import { LoadButtonComponent } from './load-button/load-button.component';
 import { SearchComponent } from './search/search.component';
+import { MainModule } from 'src/app/main/main.module';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { SearchComponent } from './search/search.component';
     ],
     imports: [
         CommonModule,
-        ItemModule
+        ItemModule,
+        MainModule
     ]
 })
 export class ItemListModule { }

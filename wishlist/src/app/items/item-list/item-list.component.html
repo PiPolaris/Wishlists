@@ -1,6 +1,14 @@
-<app-search (onTyping)="filter = $event" [value]="filter"></app-search>
+<section>
+  <app-side-menu></app-side-menu>
+  <app-top-menu></app-top-menu>
 
-<app-items [items]="items.content | filterByDescription: filter"></app-items>
+  <div class="content">
+    <app-search (onTyping)="filter = $event" [value]="filter"></app-search>
 
-<app-load-button (click)="load()" [hasMore]="hasMore">
-</app-load-button>
+    <app-items [items]="items.content | filterByDescription: filter"></app-items>
+
+    <app-load-button (click)="load()" [hasMore]="hasMore"></app-load-button>
+  </div>
+
+  <app-right-menu></app-right-menu>
+</section>

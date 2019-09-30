@@ -12,6 +12,6 @@ export class ItemListResolver implements Resolve<Observable<Item[]>>{
 
     resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) : Observable<Item[]> {
         const userId = route.params.userId;
-        return this.service.listFromUserPaginated(userId, 0);
+        return this.service.listItemsFromUserPaginated(userId, 0);
     }
 }

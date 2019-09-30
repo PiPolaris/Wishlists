@@ -13,7 +13,7 @@ export class ItemService {
             .get<Item[]>(API + '/wishlists/' + wishId);
     }*/
 
-    listFromUserPaginated(wishId: number, page: number) {
+    listItemsFromUserPaginated(wishId: number, page: number) {
         const params = new HttpParams()
             .append('page', page.toString())
             .append('wishId', wishId.toString());

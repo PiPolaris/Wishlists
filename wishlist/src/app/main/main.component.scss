@@ -5,13 +5,6 @@ section {
   grid-template-rows: auto 1fr;
   grid-template-areas: "side  top     top"
                        "side  content right";
-  overflow: hidden;
-
-  app-side-menu,
-  app-top-menu {
-
-    top: 0;
-  }
 
   app-side-menu {
     grid-area: side;
@@ -27,23 +20,5 @@ section {
 
   .content {
     grid-area: content;
-    overflow-y: auto;
   }
-}
-
-::-webkit-scrollbar {
-  //width: 0px;
-  color: black;
-  background: pink;
-}
-
-::-webkit-scrollbar-track {
-    background-color: #F4F4F4;
-}
-::-webkit-scrollbar {
-    width: 8px;
-    background: #F4F4F4;
-}
-::-webkit-scrollbar-thumb {
-    background: #dad7d7;
 }
