@@ -9,6 +9,7 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -27,6 +28,7 @@ import br.com.pipolaris.wishlists.model.User;
 import br.com.pipolaris.wishlists.repository.UserRepository;
 
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping("/users")
 public class UserController {
 
@@ -34,12 +36,15 @@ public class UserController {
     private UserRepository userRepository;
 
     @GetMapping
-	public List<UserDto> list(String userName) {
-		if (userName == null) {
+	public List<UserDto> list(String userName, String email) {
+		if (userName == null && email == null) {
 			List<User> users = userRepository.findAll();
 			return UserDto.convert(users);
-		} else {
+		} else if (email == null){
 			List<User> users = userRepository.findByName(userName);
+			return UserDto.convert(users);
+		} else {
+			List<User> users = userRepository.findByEmail(email);
 			return UserDto.convert(users);
 		}
 	}

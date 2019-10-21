@@ -1,0 +1,12 @@
+.danger, .fail {
+  color: red;
+}
+
+.alert {
+  color: yellow;
+}
+
+.success {
+  color: green;
+}
+/*# sourceMappingURL=feedback-messages.component.css.map */

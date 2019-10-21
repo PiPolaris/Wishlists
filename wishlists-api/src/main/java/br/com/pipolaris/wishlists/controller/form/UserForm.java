@@ -8,9 +8,7 @@ import org.hibernate.validator.constraints.Length;
 import br.com.pipolaris.wishlists.model.User;
 
 public class UserForm {
-	@NotNull
-	@NotEmpty
-	@Length(min = 5)
+	
 	private String name;
 	@NotNull
 	@NotEmpty

@@ -1,5 +1,5 @@
 export interface Item {
-    content: Item[];
+    content: Item;
     id: number;
     name: string;
     description: string;
