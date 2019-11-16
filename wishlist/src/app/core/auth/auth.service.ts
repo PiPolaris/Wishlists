@@ -3,6 +3,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { User } from '../../home/user';
 import { tap } from 'rxjs/operators';
 import { TokenService } from '../token/token.service';
+import { stringify } from 'querystring';
 
 const API_URL = 'http://localhost:8080';
 
@@ -10,21 +11,30 @@ const API_URL = 'http://localhost:8080';
   providedIn: 'root'
 })
 export class AuthService {
+  user: {
+    id: number;
+    name: string;
+    email: string;
+    password: string;
+  }
 
   constructor(
     private http: HttpClient,
     private tokenService: TokenService) { }
 
   authenticate(email: string, password: string) {
-    return this.http.post(
+    return this.http.post<User>(
       API_URL + '/login', 
       { email, senha: password }, 
       { observe: 'response' }
     )
     .pipe(tap(res => {
-      const authToken:string = res.body.token;
-      this.tokenService.setToken(authToken);
-      console.log(authToken);
+      //this.user = res.body;
+      console.log(res.body);
+      
+      // const authToken:string = res.body.token;
+      this.tokenService.setToken(res.body.id);
+      // console.log(authToken);
     }));
   }
 

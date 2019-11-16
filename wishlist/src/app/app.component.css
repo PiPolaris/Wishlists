@@ -1,0 +1,43 @@
+section {
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto 1fr auto;
+      grid-template-columns: auto 1fr auto;
+  -ms-grid-rows: auto 1fr;
+      grid-template-rows: auto 1fr;
+      grid-template-areas: "side  top     top" "side  content right";
+  overflow: hidden;
+}
+
+section app-side-menu,
+section app-top-menu {
+  top: 0;
+}
+
+section app-side-menu {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  grid-area: side;
+}
+
+section app-top-menu {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: top;
+}
+
+section app-right-menu {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  grid-area: right;
+}
+
+section .content {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: content;
+}
+/*# sourceMappingURL=app.component.css.map */
