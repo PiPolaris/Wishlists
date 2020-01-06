@@ -11,13 +11,6 @@ const API_URL = 'http://localhost:8080';
   providedIn: 'root'
 })
 export class AuthService {
-  user: {
-    id: number;
-    name: string;
-    email: string;
-    password: string;
-  }
-
   constructor(
     private http: HttpClient,
     private tokenService: TokenService) { }
@@ -30,11 +23,11 @@ export class AuthService {
     )
     .pipe(tap(res => {
       //this.user = res.body;
-      console.log(res.body);
+      //console.log(res.body);
       
       // const authToken:string = res.body.token;
-      this.tokenService.setToken(res.body.id);
-      // console.log(authToken);
+      this.tokenService.setToken(res.body);
+      // console.log(authToken);      
     }));
   }
 

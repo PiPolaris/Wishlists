@@ -4,10 +4,12 @@ import { RightMenuComponent } from './right-menu/right-menu.component';
 import { SideMenuComponent } from './side-menu/side-menu.component';
 import { TopMenuComponent } from './top-menu/top-menu.component';
 import { FeedbackMessagesComponent } from './feedback-messages/feedback-messages.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   declarations: [
     TopMenuComponent,

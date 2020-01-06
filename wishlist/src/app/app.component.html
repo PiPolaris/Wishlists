@@ -1,4 +1,4 @@
-<section>
+<section *ngIf="signin; else login">
     <app-side-menu></app-side-menu>
     <app-top-menu></app-top-menu>
     <section class="content">
@@ -8,3 +8,7 @@
     <app-right-menu></app-right-menu>
     
 </section>
+
+<ng-template #login>
+    <router-outlet></router-outlet>
+</ng-template>

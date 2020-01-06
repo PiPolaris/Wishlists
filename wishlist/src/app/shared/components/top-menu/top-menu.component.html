@@ -1,7 +1,18 @@
 <section>
-	<span>
-		<img src="../../../assets/icons/sign-out.png" alt="">
-		SIGN OUT
-	</span>
-	<img class="thumbnail" src="../../../assets/img/Gnar_900x900.jpg" alt="">
+  <div *ngIf="(user$ | async) as user; else login">
+    <span (click)="logout()" style="cursor: pointer;">
+      <img src="../../../assets/icons/sign-out.png" alt="">
+      SIGN OUT
+    </span>
+    <div>
+      <p>{{ user }}</p>
+      <img class="thumbnail" src="../../../assets/img/Gnar_900x900.jpg" alt="">
+    </div>
+  </div>
+
+  <ng-template #login>
+    <span class="navbar-text">
+        <a [routerLink]="['']"> Please, login!</a>
+    </span>
+  </ng-template>
 </section>

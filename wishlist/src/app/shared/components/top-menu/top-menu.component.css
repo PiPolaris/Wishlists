@@ -21,10 +21,18 @@ section span {
   right: 0;
 }
 
+section .thumbnail, section p {
+  position: absolute;
+  left: 45%;
+}
+
 section .thumbnail {
   border-radius: 50%;
   max-width: 120px;
-  position: absolute;
-  left: 45%;
+}
+
+section p {
+  top: 10px;
+  font-weight: bold;
 }
 /*# sourceMappingURL=top-menu.component.css.map */

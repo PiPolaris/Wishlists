@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms'
+import { ReactiveFormsModule, FormsModule } from '@angular/forms'
 import { SigninComponent } from './signin/signin.component';
-import { SignoutComponent } from './signout/signout.component';
+import { SignupComponent } from './signup/signup.component';
 import { ComponentsModule } from '../shared/components/components.module';
 import { AppRoutingModule } from '../app.routing.module';
 import { RouterModule } from '@angular/router';
@@ -12,11 +12,12 @@ import { RouterModule } from '@angular/router';
     CommonModule,
     ReactiveFormsModule,
     ComponentsModule,
-    RouterModule
+    RouterModule,
+    FormsModule
   ],
   declarations: [
     SigninComponent,
-    SignoutComponent
+    SignupComponent
   ]
 })
 export class HomeModule { }

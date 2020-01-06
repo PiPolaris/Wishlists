@@ -1,4 +1,4 @@
-@import "../../shared/styles/variables.scss";
+@import "../../styles/variables.scss";
 
 section {
     background-color: rgba($color: $color-gray, $alpha: 0.2);
@@ -14,10 +14,18 @@ section {
         right: 0;
     }
 
+    .thumbnail, p {
+        position: absolute;
+        left: 45%;
+    }
+
     .thumbnail {
         border-radius: 50%;
         max-width: 120px;
-        position: absolute;
-        left: 45%;
+    }
+
+    p {
+        top: 10px;
+        font-weight: bold;
     }
 }

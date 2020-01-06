@@ -1,5 +1,4 @@
 export interface Item {
-    content: Item;
     id: number;
     name: string;
     description: string;
@@ -10,4 +9,5 @@ export interface Item {
     price: number;
     likes: number;
     coments: number;
+    content: Item;
 }
