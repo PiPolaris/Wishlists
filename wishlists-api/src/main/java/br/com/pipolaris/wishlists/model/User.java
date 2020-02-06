@@ -1,14 +1,13 @@
 package br.com.pipolaris.wishlists.model;
 
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 
 //import org.springframework.security.core.GrantedAuthority;
@@ -25,10 +24,18 @@ public class User {
 	private String email;
 	private String password;
 
+	@ManyToMany
+	@JoinTable(name = "friends", joinColumns = @JoinColumn(name = "userId"), inverseJoinColumns = @JoinColumn(name = "friendId"))
+	private List<User> friendsOf;
+
+	@ManyToMany
+	@JoinTable(name = "friends", joinColumns = @JoinColumn(name = "friendId"), inverseJoinColumns = @JoinColumn(name = "userId"))
+	private List<User> friends;
+
 	public User() {
-	
+
 	}
-	
+
 //	@ManyToMany(fetch = FetchType.EAGER)
 //	private List<Perfil> perfis = new ArrayList<>();
 
@@ -36,6 +43,11 @@ public class User {
 		this.name = name;
 		this.email = email;
 		this.password = password;
+	}
+
+	public User(User friendsOf, User friends) {
+		this.friendsOf.add(friendsOf);
+		this.friends.add(friends);
 	}
 
 	public Long getId() {
@@ -61,11 +73,27 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
+
 	public String getPassword() {
 		return this.password;
 	}
-	
+
+	public List<User> getFriendsOf() {
+		return friendsOf;
+	}
+
+	public void setFriendsOf(List<User> friendsOf) {
+		this.friendsOf = friendsOf;
+	}
+
+	public List<User> getFriends() {
+		return friends;
+	}
+
+	public void setFriends(List<User> friends) {
+		this.friends = friends;
+	}
+
 //	@Override
 //	public Collection<? extends GrantedAuthority> getAuthorities() {
 //		return this.perfis;
